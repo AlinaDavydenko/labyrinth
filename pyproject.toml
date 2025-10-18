@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "labyrinth"
+name = "project1-<фамилия>davydenko-alina-group-"
 version = "0.1.0"
 description = ""
 authors = ["Alina Davydenko <Alinadavydenko620@gmail.com>"]
@@ -9,9 +9,16 @@ packages = [
  ]
 
 [tool.poetry.dependencies]
-python = "^3.13"
+python = "^3.12"
 
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.14.1"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+project = "labyrinth_game.main:main"
+
