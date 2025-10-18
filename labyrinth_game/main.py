@@ -1,6 +1,6 @@
 import time
 from constants import ROOMS
-from utils import describe_current_room
+from utils import describe_current_room, attempt_open_treasure, solve_puzzle, show_help
 from player_actions import show_inventory, get_input, take_item, move_player, use_item
 
 
@@ -8,7 +8,8 @@ game_state = {
         'player_inventory': [],  # Инвентарь игрока
         'current_room': 'entrance',  # Текущая комната
         'game_over': False,  # Значения окончания игры
-        'steps_taken': 0  # Количество шагов
+        'steps_taken': 0,  # Количество шагов
+        'prize': 0  # Количество наград
     }
 
 
@@ -37,6 +38,13 @@ def process_command(game_state: dict, command: str):
                 return 'Введите правильную команду из 2 слов: Что надо взять?'
         case 'inventory':
             return show_inventory(game_state)
+        case 'solve':
+            if game_state['current_room'] == 'treasure_room':
+                return attempt_open_treasure(game_state)
+            else:
+                return solve_puzzle(game_state)
+        case 'help':
+            return show_help()
         case 'quit':
             return get_input()
 
