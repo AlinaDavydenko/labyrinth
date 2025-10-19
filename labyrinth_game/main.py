@@ -1,5 +1,5 @@
 import time
-from constants import ROOMS
+from constants import COMMANDS
 from utils import describe_current_room, attempt_open_treasure, solve_puzzle, show_help
 from player_actions import show_inventory, get_input, take_item, move_player, use_item
 
@@ -17,6 +17,10 @@ def process_command(game_state: dict, command: str):
     """ Игровой процесс """
     play_command = command.split()  # Разделяем команду запятой
     main_command = play_command[0].lower()
+
+    # Обработка односложных команд движения
+    if main_command in ['north', 'south', 'east', 'west']:
+        return move_player(game_state, main_command)
 
     match main_command:
         case 'look':
@@ -44,7 +48,7 @@ def process_command(game_state: dict, command: str):
             else:
                 return solve_puzzle(game_state)
         case 'help':
-            return show_help()
+            return show_help(COMMANDS)
         case 'quit':
             return get_input()
 
