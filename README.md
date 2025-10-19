@@ -34,7 +34,7 @@
 ### Цель проекта 
 >Проект создан для практического закрепления навыков:
 
--[x] Python-программирование на базовом уровне
+- [x] Python-программирование на базовом уровне
 - [X] Git-практика 
 - [x] Соблюдение стандартов PEP8 и проверка через Ruff
 - [x] Реализация игры через функции
@@ -46,13 +46,13 @@
 
 ### Запуск 
 > #### Клонирование репозитория
-> -[x] git clone https://github.com/AlinaDavydenko/labyrinth <br> ссылка на репозиторий
+- [x] git clone https://github.com/AlinaDavydenko/labyrinth <br> ссылка на репозиторий
 
 >#### Переход в директорию
-> -[x] cd labyrinth
+- [x] cd labyrinth
 
 > #### Запуск игры
-> -[x] python main.py
+- [x] python main.py
 
 
 
